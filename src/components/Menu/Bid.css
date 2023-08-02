@@ -1,0 +1,136 @@
+.about-us-container {
+    font-family: Arial, sans-serif;
+    background-color: #f1f1f1;
+    min-width: 840px;
+    position: relative;
+    padding-top: 100px;
+}
+
+.bid-container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.main-content {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar {
+    border: 1px solid black;
+    padding: 5px;
+    margin-bottom: 10px;
+  }
+
+.winner {
+    color:#45a049;
+    font-weight: bold;
+}
+
+.bid-slider {
+    margin-top: 20px;
+    max-width: 840px;
+}
+
+
+.bid-item {
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: center;
+    background-color: #f5f5f5;
+    margin: 0 10px;
+    /* Add margin to separate slider items */
+    max-width: 740px;
+}
+
+.item-name {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.item-description {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.item-price {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.item {
+    margin-top: 10px;
+    font-size: 18px;
+    color: rgb(21, 97, 15);
+}
+
+.bid-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.bid-button:hover {
+    background-color: #45a049;
+}
+
+.slider {
+    margin-top: 20px;
+    max-width: 840px;
+}
+
+.slider-item {
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: center;
+    background-color: #f5f5f5;
+    margin: 0 10px;
+    /* Add margin to separate slider items */
+    max-width: 740px;
+}
+
+.notification-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    pointer-events: none;
+    /* To prevent the notification container from capturing mouse clicks */
+    background-color: #4caf50;
+    /* Green background color */
+    color: #fff;
+    /* White text color */
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 10px;
+    /* Curled borders */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Optional shadow for a better visual effect */
+}
+
+/* CSS for individual notifications */
+.notification {
+    display: none;
+    animation: slideDown 0.5s ease-out;
+}
+
+/* Animation keyframes */
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+

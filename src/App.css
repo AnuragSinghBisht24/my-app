@@ -1,0 +1,152 @@
+.App-top {
+  text-align: center;
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0%;
+  margin-left: 0%;
+  padding: 0%;
+  
+  /*background-image: url("Images/R.jpeg");*/
+  background-color: rgb(197, 243, 203);
+}
+
+.auth-form-container, .login-form, .register-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.Top {
+  margin-left: 0%;
+}
+
+.img-sz {
+  width: 700px;
+  padding: 3rem;
+}
+
+.img-top {
+  width: 700px;
+}
+
+.Logout {
+  margin-right: 0%;
+}
+
+label {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: bold;
+  color: black;
+  text-align: left;
+  padding: 0.25rem 15rem;
+}
+
+input {
+  margin: 0.25rem 15rem;
+  padding: 1rem;
+  border: none;
+  border-radius: 10px;
+}
+
+button {
+  margin: 0.25rem 15rem;
+  border: none;
+  background-color: white;
+  padding: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: bold;
+}
+
+/*.link-btn {
+  background: transparent;
+  color: white;
+  text-decoration: underline;
+}*/
+
+.link-btn:hover,.link-btn-2:hover,.Login:hover,.Register:hover {
+  box-shadow: rgba(0, 0, 0, .15) 0 3px 9px 0;
+  transform: translateY(-2px)
+}
+
+.nav-style {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.link-btn-2,.link-btn,.Login,.Register {
+  background-color: #13aa52;
+  border: 1px solid #13aa52;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, .1) 0 2px 4px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-family: "Akzidenz Grotesk BQ Medium", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  outline: none;
+  outline: 0;
+  padding: 10px 25px;
+  text-align: center;
+  transform: translateY(0);
+  transition: transform 150ms, box-shadow 150ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+@media (min-width: 768px) {
+  .link-btn-2,.link-btn,.Login,.Register {
+    padding: 10px 30px;
+  }
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Add a fixed position to the notification container to position it at the top of the screen */
+.notification-container {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  /* Adjust the width as needed */
+  max-width: 400px;
+  /* Adjust the max-width as needed */
+  z-index: 9999;
+  /* Ensure the notifications are on top of other content */
+}
+
+/* Style for the notification box */
+.notification {
+  background-color: #24b61f;
+  /* Red background, adjust color as needed */
+  color: white;
+  /* Text color, adjust as needed */
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  animation: fadeOut 3s ease-in;
+  /* Apply the fadeOut animation to the notification */
+}
+
+/* Define the animation keyframes */
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-100%);
+    /* Optional: Slide the notification upward as it fades out */
+  }
+}
+

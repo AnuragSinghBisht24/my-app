@@ -1,0 +1,21 @@
+/* src/components/Navbar.css */
+.navbar {
+    background-color: #1cce43;
+    display: flex;
+  }
+  
+.tab {
+    flex: 1;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    cursor: pointer;
+}
+  
+  .tab:hover {
+    background-color: #25a52b;
+}
+  
+  .tab.active {
+    background-color: #187227;
+}
