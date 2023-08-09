@@ -12,7 +12,7 @@ function Register() {
     const [address, setAddress] = useState('');
     const [dob, setDob] = useState('');
     const [phone, setPhone] = useState('');
-    const bcrypt = require('bcrypt');
+    //const bcrypt = require('bcrypt');
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -24,9 +24,9 @@ function Register() {
         console.log(phone);
 
         try{
-            const hashedPassword = await bcrypt.hash(pass, 10);
+            //const hashedPassword = await bcrypt.hash(pass, 10);
             await axios.post("http://localhost:8000/Register",{
-                name,email,pass: hashedPassword,address,dob,phone
+                name,email,pass,address,dob,phone
             })
             .then(res=>{
                 if(res.data[0]=="exist"){

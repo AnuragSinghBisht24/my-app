@@ -12,6 +12,7 @@ const secretKey = 'your-secret-key';
 
 const cors = require("cors")
 const app = express()
+const bcrypt = require('bcrypt');
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(cors())
@@ -416,7 +417,7 @@ app.post("/", async (req, res) => {
 
 app.post("/Register", async (req, res) => {
     const { email, pass, address, name, dob, phone } = req.body
-
+    //const hashedPassword = await bcrypt.hash(pass, 10);
     const data = {
         name: name,
         address: address,
