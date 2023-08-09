@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import logo from '../Images/Untitled-1.png';
 import axios from 'axios';
 import { useNavigate, NavLink } from "react-router-dom";
-
 function Register() {
 
     const history = useNavigate();
@@ -13,6 +12,7 @@ function Register() {
     const [address, setAddress] = useState('');
     const [dob, setDob] = useState('');
     const [phone, setPhone] = useState('');
+    const bcrypt = require('bcrypt');
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -24,8 +24,9 @@ function Register() {
         console.log(phone);
 
         try{
+            const hashedPassword = await bcrypt.hash(pass, 10);
             await axios.post("http://localhost:8000/Register",{
-                name,email,pass,address,dob,phone
+                name,email,pass: hashedPassword,address,dob,phone
             })
             .then(res=>{
                 if(res.data[0]=="exist"){
