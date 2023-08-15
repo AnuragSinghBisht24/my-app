@@ -390,22 +390,28 @@ app.get("/api/items", cors(), async (req, res) => {
 app.post("/", async (req, res) => {
 
     const { email, pass } = req.body /* req.body structure is like this = { email: '', pass: '' } */
-
+    const hashpass = await bcrypt.hash(pass, 10);
+    console.log(hashpass)
     try {
         const check = await User.findOne({ email: email })
-
+        console.log(check)
         if (check) {
 
-            /* If email exists we send response that 'exist' */
-            console.log("Email match")
-            res.json(["exist", check])
+            const passMatch = await bcrypt.compare(pass,check.pass);
+            if(passMatch){
+                /* If entered password matches the entered password send 'exist' response */
+                res.json(["exist", check]);
+            }else{
+                /* If entered password doesn't match the entered password send 'notexist' response */
+                res.json(["notexist", check]);
+            }
 
         }
         else {
 
             /* If email doesn't exist we send response that 'notexist' */
-            console.log("Email doesn't match")
-            res.json(["notexist"])
+            res.json(["notexist"]);
+
         }
 
     }
@@ -417,13 +423,13 @@ app.post("/", async (req, res) => {
 
 app.post("/Register", async (req, res) => {
     const { email, pass, address, name, dob, phone } = req.body
-    //const hashedPassword = await bcrypt.hash(pass, 10);
+    const hashedPassword = await bcrypt.hash(pass, 10);
     const data = {
         name: name,
         address: address,
         phone: phone,
         email: email,
-        pass: pass,
+        pass: hashedPassword,
         dob: dob,
     }
     console.log('IN REGISTER START')
@@ -438,8 +444,7 @@ app.post("/Register", async (req, res) => {
         }
         else {
             console.log(data);
-            /* As the data doesn't exist we will say insert 'data' in mongodb 
-            await collection.insertMany([data])*/
+            /* As the data doesn't exist we will say create 'data' in mongodb */
             const newItem = await User.create(data); 
             console.log("Inserted document:", newItem);
             /* If email doesn't exist we send response that 'notexist' */

@@ -31,7 +31,7 @@ function Login() {
                     }
                 }
                 else if(res.data[0]=="notexist"){
-                    alert("User doesn't exist. Please Register yourself or enter a valid Email address.");
+                    alert("User doesn't exist or Password Error. Please Register yourself or enter a valid Email address and Password pair.");
                 }
             })
             .catch(e=>{

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import logo from '../Images/Untitled-1.png';
 import axios from 'axios';
 import { useNavigate, NavLink } from "react-router-dom";
+
 function Register() {
 
     const history = useNavigate();
